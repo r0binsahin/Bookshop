@@ -1,0 +1,43 @@
+@use "mixins" as m;
+@use 'variables' as v;
+
+.container {
+
+   .isEmptyMsg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    font-size: 2rem;
+    width: 80%;
+    height: 100px;
+    box-shadow: 0 0 5px 0 rgb(140, 135, 135);
+    margin-top: 100px;
+    
+   }
+
+   .messageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    width: 70%;
+    padding: 10px;
+
+    box-shadow: 0 0 5px 0 rgb(140, 135, 135);
+    margin: 20px;
+
+    .confirmationMessage {
+       text-align: center;
+        
+    }
+
+    .toStartPage {
+        color: v.$secondaryColor ;
+    }
+
+   }
+}

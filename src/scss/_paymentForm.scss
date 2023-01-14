@@ -1,0 +1,37 @@
+@use 'mixins' as m;
+@use 'variables' as v;
+
+.formContainer__payForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-family: 'Hind Madurai', sans-serif;
+    input {
+        width: 70%;
+       margin: 5px;
+       border: 1px solid grey;
+       @include m.desktop {
+        width: 50%;
+       }
+    }
+
+    &--cardContainer {
+        input[type="radio"]{   
+            width: auto;
+        }
+    }
+
+    &--submitButton {
+        @include m.button;
+        width: 40%;
+        margin-bottom: 20px;
+        font-size: 1.3rem;
+        font-weight: bold;
+    }
+    &--submitButton:active {
+        background-color: #cb535794;
+    }
+}
+

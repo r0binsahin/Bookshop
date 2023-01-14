@@ -1,0 +1,102 @@
+@use "navbar";
+@use "footer";
+@use "mixins";
+@use "variables";
+
+
+html {
+  font-family: variables.$font;
+}
+
+#startpage {
+  font-weight: bold;
+}
+
+#startpageWrapper {
+  min-height: 90vh;
+
+  #startpagePresentation {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    @include mixins.desktop {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img {
+      align-self: center;
+      justify-self: center;
+      box-shadow: 5px 5px 5px #999;
+      width: 60%;
+      height: auto;
+      display: block;
+      margin: auto;
+      margin-bottom: 3%;
+      @include mixins.desktop {
+        width: 60%;
+        height: auto;
+      }
+
+    }
+    
+
+    #startpagePresentationText {
+      background-color: #f1ede9;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      margin: 26px auto 0;
+      max-width: 550px;
+      min-height: 300px;
+      padding: 24px;
+      position: relative;
+      width: 80%;
+      
+    }
+    #startpagePresentationText:before,
+    #startpagePresentationText:after {
+      content: "";
+      height: 98%;
+      position: absolute;
+      width: 100%;
+      z-index: -1;
+    }
+    #startpagePresentationText:before {
+      background: #f1ede9;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+      left: -5px;
+      top: 4px;
+      transform: rotate(-2.5deg);
+    }
+    #startpagePresentationText:after {
+      background: #f6f6f6;
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+      right: -3px;
+      top: 1px;
+      transform: rotate(1.4deg);
+    }
+
+    #aboutSelma {
+      padding: 10px;
+      border-radius: 5px;
+      font-style: italic;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+      align-self: flex-end;
+    }
+  }
+
+  @include mixins.tablet {
+    flex-direction: row;
+    img {
+      height: 80vh;
+    }
+  }
+}
+//}

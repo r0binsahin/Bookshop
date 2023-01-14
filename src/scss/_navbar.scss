@@ -1,0 +1,117 @@
+@use 'mixins';
+@use 'variables' as var;
+
+body{
+    padding-top: 120px;
+}
+
+.navbar{
+    background-color: white;
+    box-shadow: 0 0 5px 0 rgb(140, 135, 135);
+
+    .pageTitle a {
+        color: #A63D40;
+        font-size: 2rem;
+        font-weight: bold;
+        padding-left: 20px;
+        text-decoration: none;
+    }
+
+    .cartContainer{
+        position: absolute;
+        right: 24%;
+        transform: translatex(100%);
+    }
+
+    #theCart {
+        font-size: 2rem;
+    }
+
+    //storlek och border på hamburgaren 
+    .navbar-toggler { 
+        border: none;
+        font-size: 2rem;
+        color: rgb(168, 62, 65);
+    
+        .cartContainer{
+            font-size: 2.5rem;  
+            margin-right: 15px;
+
+            #cartItems { 
+                top:-20px;
+                font-size: 1rem;
+                
+            }
+        }
+    }
+    //färgen på ränderna 
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(168, 62, 65)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+    .nav-link {
+        color: var.$primaryColor;
+        font-size: 1.5rem;
+    }
+}
+// logga
+.pageLogo {
+    display: none;
+    @include mixins.desktop {
+        display: inline;
+        border: 5px solid #A63D40;
+        border-radius: 50%;
+        margin-right: 10px;
+        margin-left: 20px;
+        padding: 5px;
+        
+        #bookIcon {
+        color: #A63D40;
+        font-size: 3rem;
+        } 
+    }
+}
+
+// item badge // antal produkter i varukorgen
+#cartItems { 
+    font-size:1rem;
+    color:white;
+    background: red;
+    border-radius:50%;
+    padding: 0 5px;
+    position:relative;
+    left:-5px;
+    top:-20px;
+}
+
+#cartItemsDesktop { 
+ display: none;
+    @include mixins.desktop {
+        display: inline;
+        font-size:1rem;
+        color:white;
+        background: red;
+        border-radius:50%;
+        padding: 0 5px;
+        position:relative;
+        left:-5px;
+        top:-20px;
+    }
+}
+
+    
+
+        
+
+
+     
+
+
+
+        
+       
+        
+
+
+   
+
+    

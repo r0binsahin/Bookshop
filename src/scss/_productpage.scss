@@ -1,0 +1,99 @@
+
+@use 'navbar';
+@use 'footer';
+@use 'mixins';
+@use 'variables';
+@use 'bookModal';
+
+
+#productpage {
+    font-weight: bold;
+}
+
+#filterForm {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: variables.$secondaryColor; 
+    color: rgb(253, 246, 236);
+    margin-bottom: 20px;
+    justify-content: space-evenly;
+
+    div {
+        display: flex;
+        width: 20%;
+
+        input {
+            display: none;
+        }
+        label { 
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+        }
+        
+        label:hover {
+            cursor:pointer;
+        }
+    }
+    div:hover {
+     background-color:#cf6164; 
+    }
+    @include mixins.tablet {
+        flex-wrap: nowrap;
+    }
+}
+#productpageWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    
+    [class$=bookContainer] {
+
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        width: 80vw;
+        margin-bottom: 20px; 
+        box-shadow: 0 5px 5px 0 #cab4b6;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+            width: 70%;
+        }
+
+        .price {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            padding-top: 10px;
+            font-weight: bolder;
+        }
+
+        .buyButton {
+            @include mixins.button;
+            width: 90%;
+        }
+        button:active {
+            background-color: #cb535794;
+        }
+    }
+    
+    @include mixins.tablet {
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        row-gap: 20px;
+        column-gap: 20px;
+        
+        
+        [class$=bookContainer] {
+            padding: 10px;
+            height:95%;
+            width: auto;   
+        }
+       
+    }
+}
+

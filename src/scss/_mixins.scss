@@ -1,0 +1,23 @@
+@use 'variables';
+
+@mixin tablet {
+    @media screen and (min-width: 786px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin button {
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: variables.$secondaryColor;
+    color: white;
+}
+
+

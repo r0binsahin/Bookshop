@@ -1,0 +1,89 @@
+@use "navbar";
+@use "footer";
+@use "paymentForm";
+@use 'mixins';
+@use 'variables';
+@use 'messages';
+
+
+html { 
+  font-family: variables.$font;
+}
+ 
+#checkout {
+  font-weight: bold;
+}
+
+.container.row {
+  display: flex;
+  position: relative;
+  margin: auto !important;
+  justify-content: center;
+  min-height: 80vh;
+  
+  .container__mainContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    & div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 95vw;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.386);
+      margin-bottom: 30px;
+      @include mixins.desktop {
+        width: 100%;
+      }
+
+      & :nth-child(2) {
+        font-size: 0.9rem;
+        width: 20%;
+      }
+      & :last-child {
+        font-weight: bold;
+      }
+      
+      button { 
+        border: none;
+        padding: 10px 10px 10px 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        height: fit-content;
+      }
+      button:active {
+        background-color: rgb(220, 216, 216);
+      }
+      & h3 {
+        font-size: medium;
+        font-weight: bold;
+        margin: 0;
+      }
+    }
+    img {
+      height: 10vh;
+      margin: 3px;
+    }
+
+  }
+  .totalSum {
+    font-weight: bold;
+    display: inline;
+    padding: 1%;
+    width: fit-content;
+  }
+}
+
+.payButton {
+  @include mixins.button;
+  width: 40%;
+  margin-bottom: 20px;
+  height: fit-content;
+  padding: 10px;
+}
+.payButton:active {
+  background-color: #cb535794;
+}
+

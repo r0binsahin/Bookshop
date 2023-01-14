@@ -1,0 +1,37 @@
+@use 'mixins';
+
+
+
+.pageFoot {
+    display: flex;
+    justify-content: center;
+    background-color:#A89B8C;
+    padding: 20px;
+
+    ul { 
+        list-style: none;
+        flex-direction: column;
+
+        li { 
+            color: antiquewhite;
+        }
+    }
+    
+    @include mixins.tablet {
+        ul {
+            display: flex;
+            flex-direction: row;
+
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            width: 100vw;
+            li {
+                padding: 20px;
+                width: 30vw;
+                flex-direction: row;
+                text-align: center;
+            }
+        }
+    }
+}
+   
